@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchTerm = document.getElementById('search').value.trim();
 
     // Make a request to GitHub API for user search
-    const userSearchEndpoint = 'https://api.github.com/search/users?q=${searchTerm}';
+    const userSearchEndpoint = `https://api.github.com/search/users?q=${searchTerm}`;
     try {
       const response = await fetch(userSearchEndpoint, {
         headers: {
@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Error fetching user data:', error);
     }
   });
+
   function displayUsers(users) {
     userList.innerHTML = '';
     
@@ -29,12 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const li = document.createElement('li');
       li.textContent = user.login;
       li.addEventListener('click', () => {
-        // Fetch repositories for the selected github user
+        // Fetch repositories for the selected GitHub user
         getUserRepos(user.login);
       });
       userList.appendChild(li);
     });
   }
+
   async function getUserRepos(username) {
     const userReposEndpoint = `https://api.github.com/users/${username}/repos`;
     try {
@@ -60,4 +62,4 @@ document.addEventListener('DOMContentLoaded', () => {
       reposList.appendChild(li);
     });
   }
-    });
+});

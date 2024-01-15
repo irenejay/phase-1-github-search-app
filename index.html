@@ -1,15 +1,14 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset='UTF-8'/>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
-  <meta http-equiv='X-UA-Compatible' content='ie=edge'/>
-  <title>Document</title>
-  <script src='js/index.js'></script>
-  <link rel='stylesheet' href='index.css'/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>GitHub Search</title>
+  <link rel="stylesheet" href="index.css"/>
 </head>
 <body>
-  <div id='main'>
-
+  <div id="main">
     <h2>GitHub Search</h2>
 
     <form id="searchForm">
@@ -17,21 +16,27 @@
       <input type="text" id="searchInput" required>
       <button type="submit">Search</button>
     </form>
-  
 
-    <div id='github-container'>
-      <ul id='user-list'>
-
+    <div id="github-container">
+      <ul id="user-list">
+        <!-- GitHub user search results will be displayed here -->
       </ul>
-      <div id="searchResults"></div>
-      <div id="repoResults"></div>
 
-      <ul id='repos-list'>
+      <div id="searchResults">
+        <!-- Additional information about the selected GitHub user will be displayed here -->
+      </div>
 
+      <div id="repoResults">
+        
+        <!-- GitHub user repositories will be displayed here -->
+      </div>
+
+      <ul id="repos-list">
+        <!-- User repositories will be displayed here -->
       </ul>
     </div>
-
   </div>
 
+  <script src="js/index.js"></script>
 </body>
 </html>
